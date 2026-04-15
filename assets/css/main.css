@@ -4120,3 +4120,302 @@ body.is-menu-visible #menu .inner {
   opacity: 1;
   visibility: visible;
 }
+
+/* =============================================
+   Uniformización de imágenes en Spotlights
+   (Proyectos en landing.html)
+   ============================================= */
+
+/* Altura fija y overflow oculto para el contenedor de imagen */
+.spotlights > section > .image {
+  overflow: hidden;
+  min-height: 22em;
+}
+
+/* La imagen ocupa todo el contenedor de forma uniforme */
+.spotlights > section > .image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+/* Ajuste responsivo: pantallas medianas (≤ 1280px) */
+@media screen and (max-width: 1280px) {
+  .spotlights > section > .image {
+    min-height: 20em;
+  }
+}
+
+/* Ajuste responsivo: pantallas pequeñas (≤ 980px)
+   En mobile el layout ya cambia a bloque, 
+   la imagen necesita una altura fija explícita */
+@media screen and (max-width: 980px) {
+  .spotlights > section > .image {
+    min-height: 16em;
+    height: 16em;
+  }
+
+  .spotlights > section > .image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+/* Ajuste responsivo: móviles pequeños (≤ 736px) */
+@media screen and (max-width: 736px) {
+  .spotlights > section > .image {
+    min-height: 13em;
+    height: 13em;
+  }
+}
+
+/* =============================================
+   FIXES RESPONSIVE — Portafolio Oswaldo
+   Correcciones para títulos, tipografía
+   y layout en dispositivos móviles
+   ============================================= */
+
+/* --- Prevenir scroll horizontal global --- */
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+/* ---- INDEX.HTML ---- */
+
+/* Banner: h1 muy largo en mobile */
+@media screen and (max-width: 736px) {
+  #banner h1 {
+    font-size: 1.6em;
+    line-height: 1.3;
+    word-break: break-word;
+  }
+
+  #banner > .inner {
+    padding: 0 1em !important;
+  }
+
+  /* Párrafo del banner: reducir tamaño para que no desborde */
+  #banner > .inner .content p {
+    font-size: 0.85em;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #banner h1 {
+    font-size: 1.35em;
+    letter-spacing: 0.01em;
+  }
+
+  #banner > .inner {
+    padding: 0 0.75em !important;
+  }
+}
+
+/* Tiles: h3 en tarjetas de proyecto del index — muy largo en mobile pequeño */
+@media screen and (max-width: 480px) {
+  .tiles article {
+    padding: 2em 1.25em 1em 1.25em;
+  }
+
+  .tiles article h3 {
+    font-size: 1.1em;
+    line-height: 1.4;
+  }
+
+  .tiles article p {
+    font-size: 0.8em;
+    display: none; /* ocultar descripción en pantallas muy pequeñas para evitar desbordamiento */
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .tiles article h3 {
+    font-size: 1em;
+  }
+}
+
+/* ---- LANDING.HTML ---- */
+
+/* Spotlights — h3 y h4 en tarjetas de proyectos */
+@media screen and (max-width: 980px) {
+  .spotlights > section > .content > .inner h3 {
+    font-size: 1.2em;
+    line-height: 1.35;
+    word-break: break-word;
+    hyphens: auto;
+  }
+
+  .spotlights > section > .content > .inner h4 {
+    font-size: 0.95em;
+    line-height: 1.35;
+  }
+
+  .spotlights > section > .content > .inner p {
+    font-size: 0.9em;
+  }
+}
+
+@media screen and (max-width: 736px) {
+  .spotlights > section > .content > .inner h3 {
+    font-size: 1.1em;
+    word-break: break-word;
+    hyphens: auto;
+  }
+
+  .spotlights > section > .content > .inner h4 {
+    font-size: 0.85em;
+  }
+
+  .spotlights > section > .content > .inner p {
+    font-size: 0.82em;
+  }
+
+  /* Reducir padding lateral del contenido en spotlights en mobile */
+  .spotlights > section > .content {
+    padding: 2em 1.25em 1em 1.25em;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .spotlights > section > .content > .inner h3 {
+    font-size: 1em;
+  }
+
+  .spotlights > section > .content > .inner h4 {
+    font-size: 0.82em;
+    font-weight: 400;
+  }
+
+  .spotlights > section > .content > .inner p {
+    font-size: 0.78em;
+  }
+}
+
+/* Landing: sección "Mis Proyectos y Soluciones" */
+@media screen and (max-width: 736px) {
+  #one .inner h2 {
+    font-size: 1.3em;
+    line-height: 1.35;
+    word-break: break-word;
+  }
+
+  #one .inner p {
+    font-size: 0.85em;
+    line-height: 1.6;
+  }
+}
+
+/* ---- GENERIC.HTML ---- */
+
+/* Nombre con letter-spacing grande: desborda en mobile */
+.acerca-c {
+  text-align: center;
+  letter-spacing: 6px;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+@media screen and (max-width: 736px) {
+  .acerca-c {
+    letter-spacing: 2px;
+    font-size: 1.3em;
+    line-height: 1.3;
+  }
+
+  /* h2 dentro de acerca-c */
+  h2.acerca-c {
+    font-size: 1.1em;
+    letter-spacing: 1.5px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .acerca-c {
+    letter-spacing: 1px;
+    font-size: 1.15em;
+  }
+
+  h2.acerca-c {
+    font-size: 1em;
+    letter-spacing: 0.5px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .acerca-c {
+    letter-spacing: 0px;
+    font-size: 1em;
+  }
+
+  h2.acerca-c {
+    font-size: 0.9em;
+  }
+}
+
+/* Habilidades técnicas: texto muy largo en una línea */
+@media screen and (max-width: 736px) {
+  #one .inner p strong,
+  #one .inner p {
+    word-break: break-word;
+    overflow-wrap: break-word;
+    font-size: 0.85em;
+    line-height: 1.7;
+  }
+}
+
+/* Imagen principal en generic.html — evitar desbordamiento */
+.image.main img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ---- GLOBAL MOBILE FIXES ---- */
+
+/* Prevenir que headers con texto largo desborden */
+@media screen and (max-width: 736px) {
+  h1, h2, h3, h4 {
+    overflow-wrap: break-word;
+    word-break: break-word;
+    hyphens: auto;
+  }
+
+  /* Sección de contacto: correo largo puede desbordar */
+  #contact a {
+    word-break: break-all;
+    font-size: 0.85em;
+  }
+
+  /* Reducir padding del formulario de contacto en mobile */
+  #contact > .inner > :nth-child(2n - 1) {
+    padding-right: 0;
+  }
+}
+
+/* Botones — asegurar que no se corten en pantallas muy pequeñas */
+@media screen and (max-width: 360px) {
+  input[type="submit"],
+  input[type="reset"],
+  .button {
+    font-size: 0.7em;
+    padding: 0 1.25em;
+    letter-spacing: 0.1em;
+  }
+}
+
+/* Sección Three (CTA) en landing.html */
+@media screen and (max-width: 736px) {
+  #three .inner h2 {
+    font-size: 1.3em;
+    word-break: break-word;
+  }
+}
