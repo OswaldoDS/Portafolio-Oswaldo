@@ -3092,7 +3092,7 @@ button:disabled,
 }
 
 .spotlights > section > .image:before {
-  background: rgba(36, 41, 67, 0.9);
+  background: rgba(36, 41, 67, 0.7);
   content: "";
   display: block;
   height: 100%;
@@ -3101,6 +3101,50 @@ button:disabled,
   position: absolute;
   top: 0;
   width: 100%;
+  -moz-transition: opacity 0.3s ease-in-out;
+  -webkit-transition: opacity 0.3s ease-in-out;
+  -ms-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
+  z-index: 1;
+}
+
+.spotlights > section > .image:hover:before {
+  opacity: 1;
+}
+
+.spotlights > section > .image:after {
+  content: "Ver proyecto";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -moz-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  color: #ffffff;
+  font-size: 1.2em;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  opacity: 0;
+  -moz-transition: opacity 0.3s ease-in-out, -moz-transform 0.3s ease-in-out;
+  -webkit-transition: opacity 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  -ms-transition: opacity 0.3s ease-in-out, -ms-transform 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  z-index: 2;
+  pointer-events: none;
+  background-color: rgba(36, 41, 67, 0.8);
+  padding: 0.75em 1.5em;
+  border: 1px solid #ffffff;
+  border-radius: 4px;
+}
+
+.spotlights > section > .image:hover:after {
+  opacity: 1;
+  -moz-transform: translate(-50%, -50%) scale(1.05);
+  -webkit-transform: translate(-50%, -50%) scale(1.05);
+  -ms-transform: translate(-50%, -50%) scale(1.05);
+  transform: translate(-50%, -50%) scale(1.05);
 }
 
 .spotlights > section > .content {
